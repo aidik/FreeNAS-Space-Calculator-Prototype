@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FreeNAS Configurator</title>
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="js/configurator.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/style.min.css" media="all">
+	</head>
+	<body>
+		<h1>Select your machine!</h1>
+		<div id="configurator">
+			<form id="fnc_form" class="fnc_form" method="post" action="">
+				<ul >
+					<li id="li_0">
+						<label class="description" for="system">System </label>
+						<div>
+							<input type="radio" id="system4" name="system" value="4">4 Bay 
+		  					<input type="radio" id="system8" name="system" value="8">8 Bay
+	  					</div>
+					</li>
+
+					<li id="li_1" >
+						<label class="description" for="hdd_count">HDD Count Config </label>
+						<div>
+							<select disabled class="element select medium" id="hdd_count" name="hdd_count"> 
+								<option value="0" >Diskless</option>
+								<option value="1" >1 disk</option>
+								<option value="2" >2 disks</option>
+								<option value="3" >3 disks</option>
+								<option value="4" >4 disks</option>
+								<option value="5" >5 disks</option>
+								<option value="6" >6 disks</option>
+								<option value="7" >7 disks</option>
+								<option value="8" >8 disks</option>
+							</select>
+						</div> 
+					</li>
+
+					<li id="li_2" >
+						<label class="description" for="hdd_size">HDD Size Config </label>
+						<div>
+							<select disabled class="element select medium" id="hdd_size" name="hdd_size"> 
+								<option value="1" >1 TB</option>
+								<option value="2" >2 TB</option>
+								<option value="3" >3 TB</option>
+								<option value="4" >4 TB</option>
+								<option value="6" >6 TB</option>
+							</select>
+						</div> 
+					</li>
+
+					<li id="li_3" >
+						<label class="description" for="hdd_raid">HDD Raid Config </label>
+						<div>
+							<select disabled class="element select medium" id="hdd_raid" name="hdd_raid"> 
+								<option value="10" >Raid 10</option>
+								<option value="Z1" >RaidZ</option>
+								<option value="Z2" >RaidZ2</option>
+								<option value="Z3" >RaidZ3</option>
+							</select>
+						</div> 
+					</li>					
+
+					<li id="li_4" >
+						<label class="description" for="dram">DRAM Config </label>
+						<div>
+							<select disabled class="element select medium" id="dram" name="dram"> 
+								<option value="16" >16 GB</option>
+								<option value="32" >32 GB</option>
+								<option value="64" >64 GB</option>
+							</select>
+						</div> 
+					</li>					
+
+					<li id="li_5" >
+						<label class="description" for="cache">Cache Config </label>
+						<div>
+							<input disabled type="checkbox" id="read_cache" name="read_cache" value="yes"> Read Cache<br>
+  							<input disabled type="checkbox" id="write_cache" name="write_cache" value="yes"> Write Cache<br>
+						</div> 
+					</li>
+
+					<li id="li_6" >
+						<label class="description" for="nic">NIC Config </label>
+						<div>
+							<input disabled type="checkbox" id="nic" name="nic" value="yes"> 10 GB/e<br>
+						</div> 
+					</li>
+				</ul>
+			</form>
+		</div>
+		<div id="result">
+			<span id="total">System Total <b>$ 0.00</b></span><br />
+			<span id="raw">Total Raw Capacity <b>0 TB</b></span><br />
+			<span id="usable">Total Usable Capacity <b>0 TB</b></span><br />
+			<span id="marketed">Total Marketed Usable Capacity <b>0 TB</b></span><br />
+		</div>
+		<div id="console">
+			<p><b>GET Output:</b></p>
+			<p id="get_output"></p>
+			<p><b>JSON Output:</b></p>
+			<p id="json_output"></p>
+		</div>
+	</body>
+</html>
